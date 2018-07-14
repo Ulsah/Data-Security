@@ -30,7 +30,7 @@ foreach($result as $row)
    //  	mkdir($dir,0777,true);
 	$msg="Your account is activated."; 
     $result1=mysqli_query($mysqli,"UPDATE unverified_users SET status='$st' WHERE activationcode='$code'");
-    $sql2="select email,password from unverified_users where activationcode='$code'1";
+    $sql2="select email,password from unverified_users where activationcode='$code'";
     $result5=mysqli_query($mysqli,$sql2);
     $array4 = mysqli_fetch_assoc($result5);
     echo $array4['email'];

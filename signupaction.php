@@ -42,8 +42,8 @@ $mail->Username = 'mail@myhealthvault.tk';
 $mail->Password = 'Mits1234'; 
 //$mail->SMTPSecure = 'tls';                  
 $mail->Port = 587;                          
-$mail->setFrom('mail@myhealthvault.tk','HealthVault');
-$mail->addReplyTo('mail@myhealthvault.tk', 'HealthVault');
+$mail->setFrom('mail@myhealthvault.tk','xxxxxxxx');
+$mail->addReplyTo('mail@myhealthvault.tk', 'xxxxxxxx');
 $mail->addAddress($email);   // Add a recipient
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');
@@ -51,7 +51,7 @@ $mail->isHTML(true);  // Set email format to HTML
 $bodyContent = "<html></body><div><div>Dear $name,</div></br></br>";
 $bodyContent .= "<div style='padding-top:8px;'>Please click on the following link to verify and activate your xxxxxxxxxxx account</div>
 <div style='padding-top:10px;'><a href='http://localhost:8080/secure/Data-Security/email_verification.php?code=$activationcode'>Click Here</a></div>
-<div style='padding-top:4px;'><br><br>Powered by <a href='Healthvault'>healthvault.com</a></div></div>
+<div style='padding-top:4px;'><br><br>Powered by <a href='xxxxxxxx'>healthvault.com</a></div></div>
 </body></html>";
 $mail->Subject = 'Account verification for xxxxxxxxxxxxx';
 $mail->Body    = $bodyContent;
