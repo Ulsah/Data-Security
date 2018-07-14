@@ -38,8 +38,8 @@ $mail = new PHPMailer;
 $mail->isSMTP();                            
 $mail->Host = 'smtp.freehosting.host';             
 $mail->SMTPAuth = true;                     
-$mail->Username = 'xxxxxxxxxxxxxxxxx';          
-$mail->Password = 'xxxxxxxxxx'; 
+$mail->Username = 'mail@myhealthvault.tk';          
+$mail->Password = 'Mits1234'; 
 //$mail->SMTPSecure = 'tls';                  
 $mail->Port = 587;                          
 $mail->setFrom('mail@myhealthvault.tk','HealthVault');
@@ -49,11 +49,11 @@ $mail->addAddress($email);   // Add a recipient
 //$mail->addBCC('bcc@example.com');
 $mail->isHTML(true);  // Set email format to HTML
 $bodyContent = "<html></body><div><div>Dear $name,</div></br></br>";
-$bodyContent .= "<div style='padding-top:8px;'>Please click on the following link to verify and activate your HealthVault account</div>
-<div style='padding-top:10px;'><a href='http://myhealthvault.tk/email_verification.php?code=$activationcode'>Click Here</a></div>
+$bodyContent .= "<div style='padding-top:8px;'>Please click on the following link to verify and activate your xxxxxxxxxxx account</div>
+<div style='padding-top:10px;'><a href='http://localhost:8080/secure/Data-Security/email_verification.php?code=$activationcode'>Click Here</a></div>
 <div style='padding-top:4px;'><br><br>Powered by <a href='Healthvault'>healthvault.com</a></div></div>
 </body></html>";
-$mail->Subject = 'Account verification for HealthVault';
+$mail->Subject = 'Account verification for xxxxxxxxxxxxx';
 $mail->Body    = $bodyContent;
 }
 if(!$mail->send()) {

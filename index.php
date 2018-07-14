@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // Prepare a select statement
 
-        $sql = "SELECT email, password FROM patientdata WHERE email = ?";
+        $sql = "SELECT email, password FROM users WHERE email = ?";
 
         
         if($stmt = mysqli_prepare($mysqli, $sql)){
@@ -180,7 +180,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <div style="display:inline-block;width:100px;padding-bottom:100px;border-radius:50%;margin:8%;background-image:url('images/logo.png');background-size:cover;">
 </div>
 
-<p style="color:rgb(44,181,232);font-weight:bold;font-size:20px;">Sign in to HealthVault</p>
+<p style="color:rgb(44,181,232);font-weight:bold;font-size:20px;">Sign in to xxxxxxxxxxx</p>
 
 
 <!------------------------------->

@@ -1,5 +1,5 @@
 <?php
-	$mysqli = new mysqli('139.59.61.30', 'root', 'Mits@123', 'healthvault');
+	$mysqli = new mysqli('localhost', 'root', 'r', 'secure');
 //$mysqli = new mysqli('localhost', 'mreuser1_mits', 'mits@123','mreuser1_healthvault');
 if ($mysqli->connect_errno) {
     echo "Sorry, this website is experiencing problems.";
@@ -26,15 +26,26 @@ $st=1;
 $result=mysqli_query($mysqli,"SELECT email FROM unverified_users WHERE activationcode='$code'");
 foreach($result as $row)
 {
-     $dir="/home/mreuser1/public_html/myhealthvault.tk/documents/".$row['email'];
-     	mkdir($dir,0777,true);
+    // $dir="/home/mreuser1/public_html/myhealthvault.tk/documents/".$row['email'];
+   //  	mkdir($dir,0777,true);
 	$msg="Your account is activated."; 
-	$result1=mysqli_query($mysqli,"UPDATE unverified_users SET status='$st' WHERE activationcode='$code'");
+    $result1=mysqli_query($mysqli,"UPDATE unverified_users SET status='$st' WHERE activationcode='$code'");
+    $sql2="select email,password from unverified_users where activationcode='$code'1";
+    $result5=mysqli_query($mysqli,$sql2);
+    $array4 = mysqli_fetch_assoc($result5);
+    echo $array4['email'];
+    $email5=$array4['email'];
+    echo $array4['password'];
+    $password5=$array4['password'];
+    $sql6="insert into users (email,password) values ('$email5','$password5')";
+    $result6=mysqli_query($mysqli,$sql6);
+
 }
 }
+
 else
 {
-$msg ="Your account is already active";
+$msg="Your account is already active";
 }
 }
 else
@@ -47,7 +58,7 @@ if(strcmp($msg,"Your account is activated.")==0)
 {
     echo " You are now being redirected to login page";
     sleep(4);
-    print "<META http-equiv='refresh' content='3;URL=https://myhealthvault.tk'>";
+    print "<META http-equiv='refresh' content='3;URL=http://localhost:8080/secure/Data-Security/'>";
     //   header( "Location: https://myhealthvault.tk" );
 
 }
